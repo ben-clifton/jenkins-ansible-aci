@@ -1,0 +1,16 @@
+---
+- connection: local
+  gather_facts: false
+  hosts: all
+
+  tasks:
+    - name: Add a new tenant
+      aci_tenant:
+        host: "{{ apic }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        tenant: "{{ tenant }}"
+        description: "{{ description }}"
+        state: "{{ state }}"
+        validate_certs: "no"
+
