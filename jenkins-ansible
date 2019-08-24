@@ -1,0 +1,30 @@
+FROM jenkins/jenkins:lts
+
+# Change to root for elevate permissions
+USER root
+
+# Disable setup wizard
+ENV JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+
+# Skip initial setup of jenkins
+RUN echo 2.0 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
+
+# Update apt
+RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 
+RUN apt update 
+
+# Install ansible
+RUN apt install -y ansible
+
+# Clone the repo for jenkins jobs and ansible playbooks
+RUN git clone https://github.com/ben-clifton/jenkins-ansible-aci.git /tmp/jenkins-ansible-aci/
+
+USER jenkins 
+# Copy jobs into jenkins job folder
+RUN cp -r /tmp/jenkins-ansible-aci/jenkins/jobs /usr/share/jenkins/ref
+
+USER root
+
+# Copy playbooks into ansible folder
+RUN cp -r /tmp/jenkins-ansible-aci/ansible/playbooks /etc/ansible/playbooks/
