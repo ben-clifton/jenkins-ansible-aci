@@ -46,7 +46,7 @@ docker run --rm -p <host machine port number>:8080 <image id>
 
 6. Start sending API requests to the server.
 
-### API endpoints
+## API endpoints
 Below is a list of the API endpoints that represent Jenkins build jobs that have been configured so far.
 
 Each endpoint will have different parameters to provide with the API call depending on the policy being pushed.
@@ -59,14 +59,14 @@ The common parameters that can/should be included with every API call are:
 * state (required) - "present" for creation, "absent" for removal
 * apic (required) - hostname or IP of APIC
 
-Tenant
+### Tenant
 Parameters:
 * tenant - Name of the tenant
 ```
 GET
 http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=admin&password=ciscopsdt&state=absent&apic=sandboxapicdc.cisco.com
 ```
-VRF
+### VRF
 Query params:
 * vrf - Name of the VRF to be configured
 * tenant - Name of the tenant that the VRF will be configured under
