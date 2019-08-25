@@ -57,7 +57,7 @@ The common parameters that can/should be included with every API call are:
 * username (required) - Username of ACI account 
 * password (required) - Password of ACI account
 * state (required) - "present" for creation, "absent" for removal
-* apic (required) - DNS or IP of APIC
+* apic (required) - hostname or IP of APIC
 
 Tenant
 Parameters:
