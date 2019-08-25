@@ -5,7 +5,7 @@ The idea is just to provide a pre-configured jenkins server to which API calls c
 
 This project is based off the [jenkins/jenkins image on dockerhub](https://hub.docker.com/r/jenkins/jenkins/).
 
-These build jobs and playbooks were tested on the [Cisco ACI sandbox](sandboxapicdc.cisco.com).
+These build jobs and playbooks were tested on the [Cisco ACI sandbox](https//:sandboxapicdc.cisco.com).
 
 ## Getting Started
 
