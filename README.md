@@ -60,7 +60,7 @@ The common parameters that can/should be included with every API call are:
 * apic (required) - hostname or IP of APIC
 
 ### Tenant
-Parameters:
+Query params:
 * tenant - Name of the tenant
 ```
 GET
