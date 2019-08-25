@@ -42,16 +42,24 @@ docker run --rm -p <host machine port number>:8080 <image id>
 
 6. Start sending API requests to the server.
 
+### API endpoints 
+
+Tenant
+```
+GET
+http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=admin&password=ciscopsdt&state=absent&apic=sandboxapicdc.cisco.com
+```
+VRF
+```
+GET
+http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=admin&password=ciscopsdt&state=absent&apic=sandboxapicdc.cisco.com&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
+```
 
 ## Built With
 
 * [Jenkins](https://jenkins.io/doc/)
 * [Ansible](https://docs.ansible.com/ansible/latest/index.html) 
 * [Docker](https://docs.docker.com/)
-
-## Authors
-
-* **Ben Clifton** - *Sticking it together*
 
 ## Acknowledgments
 
