@@ -1,0 +1,20 @@
+---
+- connection: local
+  gather_facts: false
+  hosts: all
+
+  tasks:
+    - name: Add a new VRF
+      aci_vrf:
+        host: "{{ apic }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        vrf: "{{ vrf }}"
+        description: "{{ description }}"
+        output_level: "{{ output_level }}"
+        policy_control_direction: "{{ policy_control_direction }}"
+        policy_control_preference: "{{ policy_control_preference }}"
+        tenant: "{{ tenant }}"
+        state: "{{ state }}"
+        validate_certs: no
+
