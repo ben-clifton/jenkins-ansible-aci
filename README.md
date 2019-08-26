@@ -64,7 +64,7 @@ Query params:
 * tenant - Name of the tenant
 ```
 GET
-http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=admin&password=ciscopsdt&state=absent&apic=sandboxapicdc.cisco.com
+http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=admin&password=ciscopsdt&state=absent&apic=<apic IP/hostname>
 ```
 ### VRF
 Query params:
@@ -75,7 +75,7 @@ Query params:
 * policy_control_preference - enforced unenforced
 ```
 GET
-http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=admin&password=ciscopsdt&state=absent&apic=sandboxapicdc.cisco.com&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
+http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=admin&password=ciscopsdt&state=absent&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
 ```
 
 ## Built With
