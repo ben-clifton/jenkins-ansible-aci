@@ -52,7 +52,7 @@ Below is a list of the API endpoints that represent Jenkins build jobs that have
 Each endpoint will have different parameters to provide with the API call depending on the policy being pushed.
 
 The common parameters that can/should be included with every API call are:
-* description (optional) - Tenant description
+* description (optional) - Policy description
 * token - All Jenkins build jobs have been configured with "aci_helper" as the token
 * username (required) - Username of ACI account 
 * password (required) - Password of ACI account
