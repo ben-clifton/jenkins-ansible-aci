@@ -19,10 +19,11 @@ Docker
 
 ### Installing
 
-1. Ensure docker is running
+1. Ensure docker is running*
 ```
 docker --version
 ```
+*Note: if running docker on Windows; "Linux containers" will have to be enabled
 
 2. Clone this repo
 ```
