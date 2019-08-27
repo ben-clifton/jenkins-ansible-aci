@@ -59,24 +59,32 @@ The common parameters that can/should be included with every API call are:
 * password (required) - Password of ACI account
 * state (required) - "present" for creation, "absent" for removal
 * apic (required) - hostname or IP of APIC
+* output_level (optional) - debug, info or normal
 
 ### Tenant
 Query params:
 * tenant - Name of the tenant
 ```
 GET
-http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=admin&password=ciscopsdt&state=absent&apic=<apic IP/hostname>
+http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>
 ```
 ### VRF
 Query params:
 * vrf - Name of the VRF to be configured
 * tenant - Name of the tenant that the VRF will be configured under
 * policy_control_direction - Ingress or egress
-* output_level - debug, info or normal
 * policy_control_preference - enforced unenforced
 ```
 GET
-http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=admin&password=ciscopsdt&state=absent&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
+http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
+```
+### Application Profile
+Query params:
+* ap - Name of the application profile to be configured
+* tenant - Name of the tenant in which the application profile will be created
+```
+GET
+http://localhost:<port number>:8080/job/application_profile/buildWithParameters?token=aci_helper&description=test&username=<username>&password=<password>&state=absent&apic=sandboxapicdc.cisco.com&ap=jenkins-testeroo&tenant=Heroes&host=sandboxapicdc.cisco.com
 ```
 
 ## Built With
@@ -89,6 +97,7 @@ http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper
 
 * To the authors of all the out-of-the-box ansible aci modules
   * Jacob McGill (@jmcgill298) - [ACI tenant](https://docs.ansible.com/ansible/latest/modules/aci_tenant_module.html#aci-tenant-module), [ACI VRF](https://docs.ansible.com/ansible/latest/modules/aci_vrf_module.html#aci-vrf-module)
+  * Swetha Chunduri (@schunduri) - [ACI application profile](https://docs.ansible.com/ansible/latest/modules/aci_ap_module.html#aci-ap-module)
 * To the authors of https://hub.docker.com/r/jenkins/jenkins/
 * To everyone else involved with writing the tools that this project is using
 
