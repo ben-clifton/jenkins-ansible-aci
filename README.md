@@ -1,7 +1,9 @@
 # Jenkins-ansible-aci
-This is an ongoing project to provide another way to interact with Cisco's ACI. 
+This is an ongoing project to provide another way to interact with Cisco's ACI.
 
-The idea is to provide a pre-configured jenkins server to which API calls can be made to push policies to ACI.
+The idea is to provide a pre-configured jenkins server to which API calls can be made to push policies to ACI, or jenkins build jobs initiated from the Jenkins GUI.
+
+In production, it is good practice to have jenkins executing build jobs on slave machines rather than on the same host that Jenkins is running on. If the volume of requests is expected to be high, this setup may struggle so it would be advisable to expand into dedicated ansible slaves. 
 
 This project is based off the [jenkins/jenkins image on dockerhub](https://hub.docker.com/r/jenkins/jenkins/).
 
