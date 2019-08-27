@@ -1,0 +1,18 @@
+---
+- connection: local
+  gather_facts: false
+  hosts: all
+
+  tasks:
+    - name: Add or remove application profile
+      aci_ap:
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        ap: "{{ ap }}"
+        description: "{{ description }}"
+        output_level: "{{ output_level }}"
+        tenant: "{{ tenant }}"
+        state: "{{ state }}"
+        validate_certs: "no"
+
