@@ -63,14 +63,14 @@ The common parameters that can/should be included with every API call are:
 * apic (required) - hostname or IP of APIC
 * output_level (optional) - debug, info or normal
 
-### Tenant
+### /Tenant
 Query params:
 * tenant - Name of the tenant
 ```
 GET
 http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>
 ```
-### VRF
+### /VRF
 Query params:
 * vrf - Name of the VRF to be configured
 * tenant - Name of the tenant that the VRF will be configured under
@@ -80,7 +80,7 @@ Query params:
 GET
 http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
 ```
-### Application Profile
+### /Application Profile
 Query params:
 * ap - Name of the application profile to be configured
 * tenant - Name of the tenant in which the application profile will be created
