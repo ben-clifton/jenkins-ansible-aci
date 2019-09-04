@@ -1,0 +1,5 @@
+Parameterized Remote Trigger Plugin (Parameterized-Remote-Trigger): latest
+Authentication Tokens API Plugin (authentication-tokens): latest
+Credentials Binding Plugin (credentials-binding): latest
+Copy project link plugin (copy-project-link): latest
+Pipeline (workflow-aggregator): latest
