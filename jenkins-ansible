@@ -29,6 +29,10 @@ USER root
 # Copy playbooks into ansible folder
 RUN cp -r /tmp/jenkins-ansible-aci/ansible/playbooks /etc/ansible/playbooks/
 
+USER jenkins 
+
 # Install jenkins plugins
-COPY /tmp/jenkins-ansible-aci/plugins.txt /usr/share/jenkins/ref/plugins.txt
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+#RUN cp /tmp/jenkins-ansible-aci/plugins.txt /usr/share/jenkins/ref/plugins.txt
+#RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+
+RUN /usr/local/bin/install-plugins.sh workflow-aggregator Parameterized-Remote-Trigger authentication-tokens credentials-binding copy-project-link
