@@ -30,5 +30,5 @@ USER root
 RUN cp -r /tmp/jenkins-ansible-aci/ansible/playbooks /etc/ansible/playbooks/
 
 # Install jenkins plugins
-COPY /tmp/jenkins-ansible-aci/plugins.txt /usr/share/jenkins/plugins.txt
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins.txt
+COPY /tmp/jenkins-ansible-aci/plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
