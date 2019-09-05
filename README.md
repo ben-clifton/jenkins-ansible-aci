@@ -70,7 +70,7 @@ Query params:
 * tenant - Name of the tenant
 ```
 GET
-http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>
+http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=<username>&password=<password>&state=present&apic=<apic IP/hostname>
 ```
 ### /VRF
 Query params:
@@ -80,7 +80,7 @@ Query params:
 * policy_control_preference - enforced unenforced
 ```
 GET
-http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
+http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=<tenant name>&description=test&username=<username>&password=<password>&state=present&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=<vrf name>&output_level=info&policy_control_preference=enforced
 ```
 ### /Application Profile
 Query params:
@@ -88,7 +88,7 @@ Query params:
 * tenant - Name of the tenant in which the application profile will be created
 ```
 GET
-http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/application_profile/buildWithParameters?token=aci_helper&description=test&username=<username>&password=<password>&state=absent&apic=sandboxapicdc.cisco.com&ap=jenkins-testeroo&tenant=Heroes&host=sandboxapicdc.cisco.com
+http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/application_profile/buildWithParameters?token=aci_helper&description=test&username=<username>&password=<password>&state=present&apic=sandboxapicdc.cisco.com&ap=<ap name>&tenant=<tenant name>&host=<apic IP/hostname>
 ```
 
 ## Built With
