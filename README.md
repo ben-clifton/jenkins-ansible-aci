@@ -52,6 +52,8 @@ docker run --rm -p <host machine port number>:8080 <image id>
 ## API endpoints
 Below is a list of the API endpoints that represent Jenkins build jobs that have been configured so far.
 
+A user account "apiuser" and api-token have been created and are required for Jenkins to authenticate the request.
+
 Each endpoint will have different parameters to provide with the API call depending on the policy being pushed.
 
 The common parameters that can/should be included with every API call are:
@@ -68,7 +70,7 @@ Query params:
 * tenant - Name of the tenant
 ```
 GET
-http://localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>
+http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/schedule_tenant/buildWithParameters?token=aci_helper&tenant=odysseus&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>
 ```
 ### /VRF
 Query params:
@@ -78,7 +80,7 @@ Query params:
 * policy_control_preference - enforced unenforced
 ```
 GET
-http://localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
+http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/vrf/buildWithParameters?token=aci_helper&tenant=DC1&description=test&username=<username>&password=<password>&state=absent&apic=<apic IP/hostname>&policy_control_direction=ingress&vrf=jenkinsjenkins&output_level=info&policy_control_preference=enforced
 ```
 ### /Application Profile
 Query params:
@@ -86,7 +88,7 @@ Query params:
 * tenant - Name of the tenant in which the application profile will be created
 ```
 GET
-http://localhost:<port number>:8080/job/application_profile/buildWithParameters?token=aci_helper&description=test&username=<username>&password=<password>&state=absent&apic=sandboxapicdc.cisco.com&ap=jenkins-testeroo&tenant=Heroes&host=sandboxapicdc.cisco.com
+http://apiuser:11af030ccf245b3c36721825ba4ae49365@localhost:<port number>:8080/job/application_profile/buildWithParameters?token=aci_helper&description=test&username=<username>&password=<password>&state=absent&apic=sandboxapicdc.cisco.com&ap=jenkins-testeroo&tenant=Heroes&host=sandboxapicdc.cisco.com
 ```
 
 ## Built With
