@@ -34,7 +34,7 @@ git clone https://github.com/ben-clifton/jenkins-ansible-aci.git
 
 3. Run the dockerfile to build the image that the container will be run on
 ```
-git clone https://github.com/ben-clifton/jenkins-ansible-aci.git
+docker build -t <image name:tag> -f ./jenkins-ansible .
 ```
 
 4. List all docker images and copy the image id
