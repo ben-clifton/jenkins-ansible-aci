@@ -54,6 +54,10 @@ Below is a list of the API endpoints that represent Jenkins build jobs that have
 
 A user account "apiuser" and api-token have been created and are required for Jenkins to authenticate the request.
 
+The administrator account of this jenkins instance is:
+Username: apiuser
+Password: password
+
 Each endpoint will have different parameters to provide with the API call depending on the policy being pushed.
 
 The common parameters that can/should be included with every API call are:
