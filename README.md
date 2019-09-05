@@ -49,16 +49,14 @@ docker run --rm -p <host machine port number>:8080 <image id>
 
 6. Start sending API requests to the server.
 
+The following credentials are for the account used in the initial setup of this container, to login to Jenkins and make any required changes please login with the below account:
+ * Username: apiuser
+ * Password: password
+
 ## API endpoints
 Below is a list of the API endpoints that represent Jenkins build jobs that have been configured so far.
 
 A user account "apiuser" and api-token have been created and are required for Jenkins to authenticate the request.
-
-The administrator account of this jenkins instance is:
-
-Username: apiuser
-
-Password: password
 
 Each endpoint will have different parameters to provide with the API call depending on the policy being pushed.
 
